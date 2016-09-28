@@ -1,16 +1,29 @@
 package com.epam.as.matrix;
 
 /**
- * Create two matrices.
+ * Create matrix.
  */
 public class Matrix {
-    private int matsize;
+    private int[][] matrix;
+
 
     /**
-     * @param matsize the size of two symmetric matrices
+     * @param matrix symmetric array
      */
-    public Matrix(int matsize) {
-        this.matsize = matsize;
+    public Matrix(int matrix[][]) {
+        this.matrix = matrix;
 
     }
+
+    public void printArray() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
 }

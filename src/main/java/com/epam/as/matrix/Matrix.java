@@ -16,6 +16,9 @@ public class Matrix {
         this.array = new int[rows][cols];
     }
 
+    public int getArraiSize() {
+        return array.length;
+    }
     /**
      * Getter array element by indexes
      *

@@ -27,13 +27,15 @@ public class MatrixTest {
         Matrix m2 = new Matrix(arrSize, arrSize);
         MatrixFill.arrayRandomFill(m2, arrSize);
 
+        System.out.println("Matrix #1");
         System.out.println(m1);
+        System.out.println("Matrix #2");
         System.out.println(m2);
 
-
-
-
-
+        //Multiply matrices
+        MatrixMultiplication multiplication = new MatrixMultiplication();
+        System.out.println("Result of multiplication two matrices");
+        System.out.println(multiplication.multiplyMatrices(m1, m2));
     }
 
 

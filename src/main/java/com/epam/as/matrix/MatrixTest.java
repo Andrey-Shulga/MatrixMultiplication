@@ -34,11 +34,10 @@ public class MatrixTest {
         m1.printArray();
         System.out.println("Array #2");
         m2.printArray();
-
     }
 
     /**
-     * Fill array with randoma number from 0 to 9.
+     * Fill array with random number from 0 to 9.
      *
      * @param arrSize size of array
      * @return filled array

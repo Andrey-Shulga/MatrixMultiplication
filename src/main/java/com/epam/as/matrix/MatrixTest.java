@@ -16,31 +16,32 @@ public class MatrixTest {
     public static void main(String[] args) throws IOException {
 
         int arrSize;
-        int array1[][], array2[][];
+        int[][] result;
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter size of symmetric matrices");
         arrSize = parseInt(reader.readLine());
 
-        // initializing and filling arrays
-        array1 = fillArray(arrSize);
-        array2 = fillArray(arrSize);
+        //constructing a object of type Matrix with arrays' parameters
+        Matrix matrix = new Matrix(fillArray(arrSize), fillArray(arrSize));
 
-        //constructing two objects of type Matrix
-        Matrix m1 = new Matrix(array1);
-        Matrix m2 = new Matrix(array2);
+        System.out.println("Array#1");
+        printArray(matrix.array1);
+        System.out.println("Array#2");
+        printArray(matrix.array2);
 
-        System.out.println("Array #1");
-        m1.printArray();
-        System.out.println("Array #2");
-        m2.printArray();
+        //multiply two arrays on each other
+        result = matrix.multiplication(matrix.array1, matrix.array2);
+
+        System.out.println("Result of multiplication Array#1 with Array#2");
+        printArray(result);
     }
 
     /**
-     * Fill array with random number from 0 to 9.
+     * Fill array[][] with random number from 0 to 9.
      *
      * @param arrSize size of array
-     * @return filled array
+     * @return filled array[][]
      */
     private static int[][] fillArray(int arrSize) {
         int[][] mas = new int[arrSize][arrSize];
@@ -50,6 +51,19 @@ public class MatrixTest {
             }
         }
         return mas;
+    }
 
+    /**
+     * Output array to console.
+     *
+     * @param array [][]
+     */
+    public static void printArray(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

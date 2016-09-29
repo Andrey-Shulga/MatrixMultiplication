@@ -1,23 +1,31 @@
 package com.epam.as.matrix;
 
 /**
- * Create object with array field.
+ * Object with arrays' fields.
  */
 public class Matrix {
-    private int[][] matrix;
+    public int[][] array;
+    public int[][] array1;
+    public int[][] array2;
 
-    public Matrix() {
-    }
     /**
-     * @param matrix symmetric array
+     * @param array symmetric array
      */
-    public Matrix(int matrix[][]) {
-        this.matrix = matrix;
-
+    public Matrix(int[][] array) {
+        this.array = array;
     }
 
     /**
-     * Multiplication's matrices.
+     * @param array1 symmetric array
+     * @param array2 symmetric array
+     */
+    public Matrix(int array1[][], int array2[][]) {
+        this.array1 = array1;
+        this.array2 = array2;
+    }
+
+    /**
+     * Multiplication matrices.
      *
      * @param array1 symmetric array
      * @param array2 symmetric array
@@ -31,17 +39,5 @@ public class Matrix {
             }
         }
         return resArray;
-    }
-
-    /**
-     * Output array to console.
-     */
-    public void printArray() {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 }

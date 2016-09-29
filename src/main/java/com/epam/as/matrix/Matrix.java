@@ -38,15 +38,13 @@ public class Matrix {
         this.array[rows][cols] = value;
     }
 
-    /**
-     * Printing array.
-     *
-     * @param array the array for print
-     */
-    public void printArray(int[][] array) {
-        for (int[] row : array) {
-            for (int value : row) System.out.print(value + " ");
-            System.out.println();
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("");
+        for (int[] rows : array) {
+            for (int value : rows) s.append(value).append(" ");
+            s.append("\n");
         }
+        return s.toString();
     }
 }

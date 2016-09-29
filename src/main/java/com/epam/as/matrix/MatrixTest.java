@@ -3,8 +3,8 @@ package com.epam.as.matrix;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 import static java.lang.Integer.parseInt;
+
 
 /**
  * This program demonstrates multiplication of two matrices.
@@ -20,6 +20,18 @@ public class MatrixTest {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter size of symmetric matrices");
         arrSize = parseInt(reader.readLine());
+
+        //Create and fill matrices
+        Matrix m1 = new Matrix(arrSize, arrSize);
+        MatrixFill.arrayRandomFill(m1, arrSize);
+        Matrix m2 = new Matrix(arrSize, arrSize);
+        MatrixFill.arrayRandomFill(m2, arrSize);
+
+        System.out.println(m1);
+        System.out.println(m2);
+
+
+
 
 
     }
